@@ -1,0 +1,44 @@
+{
+  "name": "petgramhenner",
+  "version": "1.0.0",
+  "description": "** Curso impartido por midudev en platzi",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "html-webpack-plugin": "^5.5.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "styled-components": "^5.3.5",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "wepack-cli": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.4",
+    "webpack-dev-server": "^4.8.1"
+  },
+  "scripts": {
+    "now-build": "npm run build",
+    "start": "webpack serve",
+    "lint": "standard",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/midudev/curso-platzi-react-avanzado.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/midudev/curso-platzi-react-avanzado/issues"
+  },
+  "standard": {
+    "ignore": [
+      "/api/**"
+    ]
+  }
+}
