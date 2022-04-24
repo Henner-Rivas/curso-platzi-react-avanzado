@@ -5,10 +5,12 @@
   "main": "webpack.config.js",
   "dependencies": {
     "html-webpack-plugin": "^5.5.0",
+    "intersection-observer": "^0.12.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-icons": "^4.3.1",
     "styled-components": "^5.3.5",
+    "unstandard": "0.0.2",
     "webpack": "^5.72.0",
     "webpack-cli": "^4.9.2",
     "wepack-cli": "^0.0.1-security"
@@ -21,9 +23,8 @@
     "webpack-dev-server": "^4.8.1"
   },
   "scripts": {
-    "now-build": "npm run build",
+    "vercel-build": "npm run build",
     "start": "webpack serve",
-    "lint": "standard",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -36,10 +37,5 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/midudev/curso-platzi-react-avanzado/issues"
-  },
-  "standard": {
-    "ignore": [
-      "/api/**"
-    ]
   }
 }
