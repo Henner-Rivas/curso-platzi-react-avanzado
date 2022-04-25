@@ -1,16 +1,21 @@
-import React from 'react'
-import { PhotoCard } from '../PhotoCard'
+import React from "react";
+import { PhotoCard } from "../PhotoCard";
+import { useQuery } from "@apollo/react-hooks";
+import { getPhotos } from "../hoc/withPhotos";
 
-const ListOfPhotoCard = () => {
+
+const ListOfPhotoCard = ({categoryId}) => {
+  const { loading, error, data } = useQuery(getPhotos,{
+    variables: { categoryId: categoryId }});
+  if (loading) return null;
+
   return (
     <div>
-{  
-[1,2,5,3,,6,33,6].map((id ,key)=>(
-   <PhotoCard id={id} key={key}/>
-))
-}
+      {data.photos.map((photoCard, id) => (
+        <PhotoCard key={id} {...photoCard} />
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default ListOfPhotoCard
+export default ListOfPhotoCard;

@@ -1,9 +1,11 @@
 import React, { Fragment } from 'react'
 import { Article, ImgWrapper, Img, Button } from './styles'
-import { MdFavoriteBorder ,MdFavorite} from 'react-icons/md'
 import { useLocalStorage } from '../hooks/useLocalStorage'
 import { useNearScreen } from '../hooks/useNearScreen'
- 
+ import FavButton from '../FavButton'
+import { useLikePhoto } from '../hooks/useLIkePhoto'
+
+
 const DEFAULT_IMAGE = 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
 export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
 
@@ -11,23 +13,22 @@ export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
 const [liked,setLiked]= useLocalStorage(key,false)
 
 const [show,element]= useNearScreen()
+const [toggleLike] = useLikePhoto()
 
-  const LikeIcon= liked ? <MdFavorite size='32px'/> : <MdFavoriteBorder size='32px' />;
-  
-
+  const handleFavClick=()=> {setLiked(!liked)
+    toggleLike({ variables: { input: { id: id } } })
+  }
   return (
     <Article ref={element}>
       {
         show && <Fragment>
-          <a href={`/detail/${id}`}>
+          <a href={`/?detail=${id}`}>
             <ImgWrapper>
               <Img src={src} />
             </ImgWrapper>
           </a>
-
-          <Button onClick={()=> setLiked(!liked)}>
-            {LikeIcon}  likes!
-          </Button>
+           
+           <FavButton liked={liked}  likes={likes} onClick={handleFavClick}/>
         </Fragment>
       }
     </Article>

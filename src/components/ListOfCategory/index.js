@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Loader } from "../../styles/Loader";
 import { Category } from "../Category";
 import { Item, List } from "./styles";
-/* import {categories as dbCategories} from  '../../../api/db.json'
- */
 
-function useCategoriesData(params) {
+function useCategoriesData() {
   const [categories, setCategories] = useState([]);
 const [loading, setLoading] = useState(false);
+
+
+
 
   useEffect(() => {
     setLoading(true)
@@ -28,7 +29,7 @@ const ListOfCategory = () => {
 
 
   useEffect(function () {
-    const onScroll = e => {
+    const onScroll = () => {
       const newShowFixed = window.scrollY > 200
 /*       showFixed !== newShowFixed && setShowFixed(newShowFixed)
  */    
