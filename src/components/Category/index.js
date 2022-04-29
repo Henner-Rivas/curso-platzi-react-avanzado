@@ -1,17 +1,18 @@
 import React from 'react'
-import { Anchor,Image } from './styles'
+import { LinkRouter,Image } from './styles'
 /* import image from   '../../../api/assets/category_birds.jpg'
  */
 const DEFAULT_IMAGE = 'https://i.imgur.com/dJa0Hpl.jpg'
- Anchor
-export const Category = ({category}) => {
+ 
+  export const Category = ({ cover = DEFAULT_IMAGE, path='#', emoji = '?' }) => { 
 
-   let {path,cover,emoji}= category;
+   console.log("🚀 ~ file: index.js ~ line 10 ~ Category ~ path", path ? path : '')
+   
   return (
-     <Anchor href={path}>
+     <LinkRouter to={path}>
            <Image src={cover} alt="" />
            {emoji}
-     </Anchor>
+     </LinkRouter>
     )
 }
 

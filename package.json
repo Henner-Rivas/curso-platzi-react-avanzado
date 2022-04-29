@@ -12,6 +12,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-icons": "^4.3.1",
+    "react-router-dom": "^6.3.0",
     "styled-components": "^5.3.5",
     "unstandard": "0.0.2",
     "webpack": "^5.72.0",
@@ -27,10 +28,10 @@
   },
   "scripts": {
     "vercel-build": "npm run build",
-    "start": "webpack serve",
+    "start": "webpack serve --history-api-fallback",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/midudev/curso-platzi-react-avanzado.git"

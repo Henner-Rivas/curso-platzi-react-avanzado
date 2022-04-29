@@ -5,13 +5,15 @@ import { getPhotos } from "../hoc/withPhotos";
 
 
 const ListOfPhotoCard = ({categoryId}) => {
+console.log("🚀 ~ file: index.js ~ line 8 ~ ListOfPhotoCard ~ categoryId", categoryId)
   const { loading, error, data } = useQuery(getPhotos,{
-    variables: { categoryId: categoryId }});
+    variables: { categoryId: categoryId}});
+
   if (loading) return null;
 
   return (
     <div>
-      {data.photos.map((photoCard, id) => (
+      {data.photos && data.photos.map((photoCard, id) => (
         <PhotoCard key={id} {...photoCard} />
       ))}
     </div>

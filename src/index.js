@@ -3,6 +3,7 @@ import  ReactDOM  from "react-dom";
 import App from "./App";
 import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from '@apollo/react-hooks'
+import { BrowserRouter } from "react-router-dom";
 
 
 const client = new ApolloClient({
@@ -13,6 +14,8 @@ const client = new ApolloClient({
 
 ReactDOM.render(
 <ApolloProvider client={client}>
+  <BrowserRouter>
     <App />
+  </BrowserRouter>
   </ApolloProvider>
 ,document.getElementById('app'))

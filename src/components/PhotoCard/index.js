@@ -4,6 +4,7 @@ import { useLocalStorage } from '../hooks/useLocalStorage'
 import { useNearScreen } from '../hooks/useNearScreen'
  import FavButton from '../FavButton'
 import { useLikePhoto } from '../hooks/useLIkePhoto'
+import { Link } from 'react-router-dom'
 
 
 const DEFAULT_IMAGE = 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
@@ -22,11 +23,11 @@ const [toggleLike] = useLikePhoto()
     <Article ref={element}>
       {
         show && <Fragment>
-          <a href={`/?detail=${id}`}>
+          <Link to={`/detail/${id}`}>
             <ImgWrapper>
               <Img src={src} />
             </ImgWrapper>
-          </a>
+          </Link>
            
            <FavButton liked={liked}  likes={likes} onClick={handleFavClick}/>
         </Fragment>
