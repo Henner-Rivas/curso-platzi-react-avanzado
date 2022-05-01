@@ -5,7 +5,6 @@ import { getPhotos } from "../hoc/withPhotos";
 
 
 const ListOfPhotoCard = ({categoryId}) => {
-console.log("🚀 ~ file: index.js ~ line 8 ~ ListOfPhotoCard ~ categoryId", categoryId)
   const { loading, error, data } = useQuery(getPhotos,{
     variables: { categoryId: categoryId}});
 
