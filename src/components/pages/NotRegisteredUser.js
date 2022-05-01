@@ -4,12 +4,16 @@ import { useRegisterMutation } from '../hooks/useRegisterMutation'
 import { useLoginMutation } from '../hooks/useloginMutation'
 import { useContext } from 'react'
 import {Context} from '../../Context'
+import Helmet from 'react-helmet'
 
  const NotRegisteredUser = () => {
    const {activateAuth}= useContext(Context)
 
         return (
           <>
+          <Helmet>
+            <title>Inicia sesión </title>
+          </Helmet>
             <Registro activateAuth={activateAuth}  />
             <Login activateAuth={activateAuth} />
           </>
